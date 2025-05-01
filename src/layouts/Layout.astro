@@ -13,28 +13,24 @@ const { title } = Astro.props;
 	<body class="font-sans bg-gray-50 text-gray-950">
 		<header class="bg-blue-950 text-white p-6 shadow-lg">
 			<div class="container mx-auto flex justify-between items-center">
-			  	<!-- Logo -->
 			  	<a href="/" class="flex items-center space-x-2">
 					<img src="/logo.png" alt="Plastifer Logo" class="h-8 w-auto" />
 			  	</a>
-		  
-			  	<!-- Navegación Desktop -->
+
 			  	<nav class="hidden md:flex space-x-8 text-lg">
 					<a href="/" class="hover:text-lime-400 transition-colors">Inicio</a>
 					<a href="/productos" class="hover:text-lime-400 transition-colors">Productos</a>
 					<a href="/nosotros" class="hover:text-lime-400 transition-colors">Nosotros</a>
 					<a href="/contacto" class="hover:text-lime-400 transition-colors">Contacto</a>
 			  	</nav>
-		  
-			  	<!-- Icono de hamburguesa en móviles -->
+
 			  	<div class="md:hidden">
 					<button id="menu-toggle" class="text-white p-2">
 				  		<i class="fa fa-bars text-2xl"></i>
 					</button>
 			  	</div>
 			</div>
-		  
-			<!-- Menú móvil -->
+
 			<div id="mobile-menu" class="md:hidden text-center p-4 space-y-4 hidden">
 			  	<a href="/" class="block text-white">
 					Inicio
@@ -59,10 +55,9 @@ const { title } = Astro.props;
 			</div>
 		</footer>
 		<script>
-			// Script para el toggle del menú en dispositivos móviles
 			document.getElementById('menu-toggle')?.addEventListener('click', function() {
 			const mobileMenu = document.getElementById('mobile-menu');
-			mobileMenu?.classList.toggle('hidden');
+				mobileMenu?.classList.toggle('hidden');
 			});
 		  </script>
 	</body>

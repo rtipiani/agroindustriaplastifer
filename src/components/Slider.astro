@@ -5,7 +5,6 @@ const slides = [
     { image: "slide3.png", title: "Resistencia Garantizada para Minería e Industria", buttonText: "Consultar Ahora", position: "object-[30%_50%]" }
 ];
 
-// Generar srcset automáticamente
 const generateSrcSet = (image: string): string => `
     ${image.replace('.avif', '-355w.avif')} 355w,
     ${image.replace('.avif', '-852w.avif')} 852w,
@@ -15,7 +14,6 @@ const generateSrcSet = (image: string): string => `
     ${image.replace('.avif', '-2268w.avif')} 2269w
 `;
 
-// Nuevo sizes optimizado
 const sizes = `
     (min-width: 2268px) 2268px,
     (min-width: 2000px) 2000px,
