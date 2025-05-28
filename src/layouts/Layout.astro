@@ -8,8 +8,21 @@ const { pathname } = Astro.url;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Agroindustria Plastifer</title>
+		<meta name="description" content="Agroindustria Plastifer E.I.R.L. - Fabricantes de mangueras y tuberías HDPE. Soluciones tecnológicas para el agro, minería e industria en Perú." />
+		<meta name="keywords" content="Agroindustria, Plastifer, mangueras HDPE, riego tecnificado, industria, minería, Lima, Perú, tuberías HDPE, mangueras reforzadas" />
+		<meta name="author" content="Agroindustria Plastifer E.I.R.L." />
+		<link rel="canonical" href="https://www.agroindustriaplastifer.com/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="{title} | Agroindustria Plastifer" />
+		<meta property="og:description" content="Soluciones tecnológicas en mangueras y tuberías HDPE para el agro, la minería y la industria." />
+		<meta property="og:image" content="https://www.agroindustriaplastifer.com/og-image.png" />
+		<meta property="og:url" content="https://www.agroindustriaplastifer.com/" />
+		<meta property="og:site_name" content="Agroindustria Plastifer" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{title} | Agroindustria Plastifer" />
+		<meta name="twitter:description" content="Soluciones tecnológicas en mangueras y tuberías HDPE para el agro, la minería y la industria." />
+		<meta name="twitter:image" content="https://www.agroindustriaplastifer.com/og-image.png" />
 	</head>
 	<body class="font-sans bg-gray-50 text-gray-950">
 		<header class="bg-white text-blue-950 font-semibold p-6 shadow-lg">
@@ -32,12 +45,11 @@ const { pathname } = Astro.url;
 				</div>
 			</div>
 
-			<!-- Menú móvil -->
 			<div id="mobile-menu" class="md:hidden text-center p-4 space-y-4 hidden">
-				<a href="/" class={`block text-white ${pathname === '/' ? 'text-lime-400 font-bold' : ''}`}>Inicio</a>
-				<a href="/productos" class={`block text-white ${pathname.startsWith('/productos') ? 'text-lime-400 font-bold' : ''}`}>Productos</a>
-				<a href="/nosotros" class={`block text-white ${pathname === '/nosotros' ? 'text-lime-400 font-bold' : ''}`}>Nosotros</a>
-				<a href="/contactanos" class={`block text-white ${pathname === '/contactanos' ? 'text-lime-400 font-bold' : ''}`}>Contacto</a>
+				<a href="/" class={`block text-blue-950 ${pathname === '/' ? 'text-lime-400 font-bold' : ''}`}>Inicio</a>
+				<a href="/productos" class={`block text-blue-950 ${pathname.startsWith('/productos') ? 'text-lime-400 font-bold' : ''}`}>Productos</a>
+				<a href="/nosotros" class={`block text-blue-950 ${pathname === '/nosotros' ? 'text-lime-400 font-bold' : ''}`}>Nosotros</a>
+				<a href="/contactanos" class={`block text-blue-950 ${pathname === '/contactanos' ? 'text-lime-400 font-bold' : ''}`}>Contacto</a>
 			</div>
 		</header>
 
@@ -45,9 +57,79 @@ const { pathname } = Astro.url;
 			<slot />
 		</main>
 
-		<footer class="bg-blue-950 text-white p-4">
-			<div class="container mx-auto text-center">
-				© {new Date().getFullYear()} Agroindustria Plastifer EIRL - RUC 20608072692
+		<footer class="bg-blue-950 text-white text-sm tracking-wide">
+  			<div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+    			<div class="md:col-span-full lg:col-span-1">
+  					<img src="/logo.png" alt="Logo de Agroindustria Plastifer" class="mb-4 w-36 h-auto">
+
+  					<h2 class="text-xl md:text-2xl font-semibold mb-4 uppercase tracking-wider">
+    					Agroindustria Plastifer E.I.R.L.
+  					</h2>
+
+  					<p class="mb-3 leading-relaxed text-gray-300 text-sm md:text-base">
+    					Soluciones tecnológicas para el agro, industria, agua potable y minería. Fabricamos mangueras y tuberías HDPE (polietileno de alta densidad), dúplex, reforzada, y somos distribuidores mayoristas de accesorios para riego tecnificado.
+  					</p>
+
+  					<p class="text-gray-400 italic text-sm md:text-base">
+    					Resistentes a altas temperaturas, impactos, ácidos y disolventes.
+  					</p>
+				</div>
+
+    			<div>
+      				<h3 class="text-lg font-semibold mb-4">
+						Contáctanos
+					</h3>
+      				<ul class="space-y-3 text-gray-300">
+        				<li>
+          					<i class="fas fa-phone-alt text-lime-400 mr-2"></i>
+							936 682 630
+        				</li>
+        				<li>
+          					<i class="fas fa-phone-alt text-lime-400 mr-2"></i>
+							970 453 403
+        				</li>
+        				<li>
+          					<i class="fas fa-envelope text-lime-400 mr-2"></i>
+							plastifer.peru20@gmail.com
+        				</li>
+        				<li>
+          					<i class="fas fa-id-card text-lime-400 mr-2"></i>
+							RUC 20608072692
+        				</li>
+        				<li>
+          					<i class="fas fa-map-marker-alt text-lime-400 mr-2"></i>
+          					AA.HH Los Huertos de Pro Mz G Lt 7, Urb. María Auxiliadora, Comas, Lima
+        				</li>
+      				</ul>
+    			</div>
+
+    			<div>
+      				<h3 class="text-lg font-semibold mb-4">
+						Síguenos en redes
+					</h3>
+      				<div class="flex items-center space-x-5 text-xl mb-6">
+        				<a href="https://www.facebook.com/p/mangueras_plastifer-100075901464338/?locale=es_ES" target="_blank" aria-label="Facebook" class="text-gray-300 hover:text-white transition duration-300">
+          					<i class="fab fa-facebook-f"></i>
+        				</a>
+        				<a href="https://www.instagram.com/manguerasderiego_plastifer/" target="_blank" aria-label="Instagram" class="text-gray-300 hover:text-white transition duration-300">
+          					<i class="fab fa-instagram"></i>
+        				</a>
+        				<a href="https://wa.me/51936682630" target="_blank" aria-label="WhatsApp 1" class="text-gray-300 hover:text-white transition duration-300">
+          					<i class="fab fa-whatsapp"></i>
+        				</a>
+        				<a href="https://wa.me/51970453403" target="_blank" aria-label="WhatsApp 2" class="text-gray-300 hover:text-white transition duration-300">
+          					<i class="fab fa-whatsapp"></i>
+        				</a>
+      				</div>
+
+      				<div class="rounded-lg overflow-hidden border border-white/10">
+        				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.8824199431722!2d-77.036884!3d-11.921207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d032c8d804a7%3A0xexample!2sAA.HH%20Los%20Huertos%20de%20Pro%20Mz%20G%20Lt%207%2C%20Urb.%20Mar%C3%ADa%20Auxiliadora%2C%20Comas%2C%20Lima!5e0!3m2!1ses!2spe!4v1680000000000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+			
+			<div class="border-t border-white/10 mt-10 pb-10 pt-6 text-center text-gray-400 text-xs bg-blue-900 w-full">
+				© 2025 Agroindustria Plastifer E.I.R.L. Todos los derechos reservados.
 			</div>
 		</footer>
 
