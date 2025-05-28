@@ -35,7 +35,7 @@ const { pathname } = Astro.url;
 					<a href="/" class={`hover:text-lime-400 transition-colors ${pathname === '/' ? 'text-lime-400 font-bold' : ''}`}>Inicio</a>
 					<a href="/productos" class={`hover:text-lime-400 transition-colors ${pathname.startsWith('/productos') ? 'text-lime-400 font-bold' : ''}`}>Productos</a>
 					<a href="/nosotros" class={`hover:text-lime-400 transition-colors ${pathname === '/nosotros' ? 'text-lime-400 font-bold' : ''}`}>Nosotros</a>
-					<a href="/contactanos" class={`hover:text-lime-400 transition-colors ${pathname === '/contactanos' ? 'text-lime-400 font-bold' : ''}`}>Contacto</a>
+					<a href="/contactanos" class={`hover:text-lime-400 transition-colors ${pathname === '/contactanos' ? 'text-lime-400 font-bold' : ''}`}>Contáctanos</a>
 				</nav>
 
 				<div class="md:hidden">
@@ -49,11 +49,11 @@ const { pathname } = Astro.url;
 				<a href="/" class={`block text-blue-950 ${pathname === '/' ? 'text-lime-400 font-bold' : ''}`}>Inicio</a>
 				<a href="/productos" class={`block text-blue-950 ${pathname.startsWith('/productos') ? 'text-lime-400 font-bold' : ''}`}>Productos</a>
 				<a href="/nosotros" class={`block text-blue-950 ${pathname === '/nosotros' ? 'text-lime-400 font-bold' : ''}`}>Nosotros</a>
-				<a href="/contactanos" class={`block text-blue-950 ${pathname === '/contactanos' ? 'text-lime-400 font-bold' : ''}`}>Contacto</a>
+				<a href="/contactanos" class={`block text-blue-950 ${pathname === '/contactanos' ? 'text-lime-400 font-bold' : ''}`}>Contáctanos</a>
 			</div>
 		</header>
 
-		<main class="min-h-screen">
+		<main class="mx-auto">
 			<slot />
 		</main>
 
@@ -81,13 +81,17 @@ const { pathname } = Astro.url;
 					</h3>
       				<ul class="space-y-3 text-gray-300">
         				<li>
-          					<i class="fas fa-phone-alt text-lime-400 mr-2"></i>
-							936 682 630
-        				</li>
+							<a href="https://wa.me/51936682630?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20productos." target="_blank" rel="noopener noreferrer" class="flex items-center text-white hover:text-lime-400 transition">
+								<i class="fas fa-phone-alt text-lime-400 mr-2"></i>
+								936 682 630
+							</a>
+						</li>
         				<li>
-          					<i class="fas fa-phone-alt text-lime-400 mr-2"></i>
-							970 453 403
-        				</li>
+  							<a href="https://wa.me/51970453403?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" class="flex items-center text-white hover:text-lime-400 transition">
+								<i class="fas fa-phone-alt text-lime-400 mr-2"></i>
+								970 453 403
+							</a>
+						</li>
         				<li>
           					<i class="fas fa-envelope text-lime-400 mr-2"></i>
 							plastifer.peru20@gmail.com
@@ -123,7 +127,7 @@ const { pathname } = Astro.url;
       				</div>
 
       				<div class="rounded-lg overflow-hidden border border-white/10">
-        				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.8824199431722!2d-77.036884!3d-11.921207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d032c8d804a7%3A0xexample!2sAA.HH%20Los%20Huertos%20de%20Pro%20Mz%20G%20Lt%207%2C%20Urb.%20Mar%C3%ADa%20Auxiliadora%2C%20Comas%2C%20Lima!5e0!3m2!1ses!2spe!4v1680000000000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.3545620297514!2d-77.07221357255492!3d-11.91753906710661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7b2c69991d7%3A0xe7c563251c0ba21a!2sPLASTIFER%20E.I.R.L%20.20!5e0!3m2!1ses!2spe!4v1748413322757!5m2!1ses!2spe" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 				</div>
 			</div>
@@ -133,11 +137,35 @@ const { pathname } = Astro.url;
 			</div>
 		</footer>
 
+		<a href="https://wa.me/51936682630" target="_blank" aria-label="WhatsApp" class="fixed bottom-20 right-6 bg-green-500 hover:bg-green-600 text-white p-5 rounded-full shadow-lg flex items-center justify-center text-4xl w-16 h-16">
+			<i class="fa-brands fa-whatsapp"></i>
+		</a>
+
+		<button id="scrollToTopBtn" title="Volver arriba" class="fixed bottom-5 right-5 z-50 p-3 rounded-full bg-lime-400 text-white shadow-lg hover:bg-lime-500 transition-opacity opacity-0 invisible">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+
 		<script>
 			document.getElementById('menu-toggle')?.addEventListener('click', function () {
 				const mobileMenu = document.getElementById('mobile-menu');
 				mobileMenu?.classList.toggle('hidden');
 			});
+
+			const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  			if (scrollToTopBtn) {
+    			window.addEventListener('scroll', () => {
+      				if (window.scrollY > 200) {
+        				scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+      				} else {
+        				scrollToTopBtn.classList.add('opacity-0', 'invisible');
+      				}
+    			});
+
+    			scrollToTopBtn.addEventListener('click', () => {
+      				window.scrollTo({ top: 0, behavior: 'smooth' });
+    			});
+  			}
 		</script>
 	</body>
 </html>
